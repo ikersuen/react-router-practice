@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {Switch, Route, Link} from 'react-router-dom'
 import AboutPage from './components/AboutPage'
+import NotFoundPage from './components/NotFoundPage';
 
 class App extends Component {
   render() {
@@ -19,8 +20,11 @@ class App extends Component {
             </ul>
             </nav>
             <hr/>
-            <Route path="/" exact component={() => <h1>home page</h1>} />
-            <Route path="/about" component={AboutPage}/>
+            <Switch>
+              <Route path="/" exact component={() => <h1>home page</h1>} />
+              <Route path="/about" component={AboutPage}/>
+              <Route component={NotFoundPage}/>
+            </Switch>
           </div>
     );
   }
