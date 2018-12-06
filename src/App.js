@@ -17,12 +17,20 @@ class App extends Component {
               <li>
                 <Link to="/">home</Link>
               </li>
+              <li>
+                <Link to="/news">news</Link>
+              </li>
+              <li>
+                <Link to="/users">users</Link>
+              </li>
             </ul>
             </nav>
             <hr/>
             <Switch>
               <Route path="/" exact component={() => <h1>home page</h1>} />
               <Route path="/about" component={AboutPage}/>
+              <Route path="/users" component={() => <h1>users page</h1>} />
+              <Route path="/news" component={() => <h1>news page</h1>} />
               <Route component={NotFoundPage}/>
             </Switch>
           </div>
